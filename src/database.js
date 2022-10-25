@@ -11,6 +11,10 @@ const config={
 const pool = new Pool(config);
 
 
+
+
+
+
 //funcion create user
 const createuser= async (req,res) =>{
 
@@ -32,7 +36,29 @@ const modifyuser=async (req,res)=>{
 
 }
 
+//funcion searchusername
+const searchusername=async(req,res)=>{
+    const username = req.params.username
+    const response= await pool.query('SELECT * FROM usuarios WHERE username=$1 ', [username])
+    console.log(response.rows);
+    res.json(response.rows)
+}
+
+
+//funcion searchuserid
+const searchuserid=async(req,res)=>{
+    const id_usuario =req.params.id_usuario
+    const response=await pool.query('SELECT * FROM usuarios WHERE id_usuario=$1', [id_usuario])
+    console.log(response.rows);
+    res.json(response.rows)
+}
+
+
 module.exports = {
     createuser,
-    modifyuser
+    modifyuser,
+    searchuserid,
+    searchusername
+
+
 }
