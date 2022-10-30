@@ -32,7 +32,7 @@ router.get('/search-usernamepeli/:username', peli.searchuserpeli)
 //rutas rating
 router.get('/rating-peli/:id_peli',rating.peli)
 router.get('/rating-user/:id_usuario',rating.usuario)
-router.post('/createrating-post',rating.createratingpeli)
+router.post('/createrating-peli',rating.createratingpeli)
 router.post('/createrating-user',rating.createratinguser)
 router.delete('/deleterating-user/:id_usuario',rating.deleteratinguser)
 router.delete('/deleterating-peli/:id_post',rating.deleteratingpeli)

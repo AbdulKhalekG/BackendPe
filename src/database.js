@@ -95,6 +95,34 @@ const ratingsuser=async(req,res)=> {
     const response=await pool.query('SELECT * FROM rating WHERE id_usuario ', [id_usuario])
     console.log(response.rowCount)
 }
+
+const createratingpeli=async(req,res)=> {
+    const{id_rating,id_peli} = req.body
+    const response = await pool.query('INSERT INTO rating(id_rating,id_peli) VALUES($1,$2)', [id_rating,id_peli])
+    console.log(response)
+}
+
+const createratinguser=async(req,res)=> {
+    const{id_rating,id_peli} = req.body
+    const response = await pool.query('INSERT INTO rating(id_rating,id_usuario VALUES($1,$2)', [id_rating,id_usuario])
+    console.log(response);
+}
+
+const deleteratinguser=async(req,res)=>{
+    const id_usuario=req.params.id_usuario
+    const response= await pool.query('DELETE * FROM rating WHERE id_usuario=$1',[id_usuario])
+    console.log(response)
+    res.json(response.rows);
+
+}
+
+const deleteratingpeli=async(req,res)=>{
+    const id_peli =req.params.id_peli
+    const response= await pool.query('DELETE * FROM rating WHERE id_peli=$1', [id_peli])
+    console.log(response)
+    res.json(response.rows);
+
+}
 module.exports = {
     createuser,
     modifyuser,
@@ -105,7 +133,11 @@ module.exports = {
     searchidpeli,
     searchusernamepeli,
     ratingspeli,
-    ratingsuser
+    ratingsuser,
+    createratingpeli,
+    createratinguser,
+    deleteratinguser,
+    deleteratingpeli
 
 
 }
