@@ -55,7 +55,7 @@ const searchuserid=async(req,res)=>{
 
 //funcion create peli
 
-const createpeli=async (req,res)=> {
+const createpeli=async (req, res)=> {
     const{tittle,descripcion,fecha, rating, genero, categoria} = req.body
     const response = await pool.query('INSERT INTO peli(tittle, descripcion, fecha, rating, genero, categoria) VALUES($1,$2,$3,$4,$5,$6)',[tittle,descripcion,fecha,rating,genero,categoria])
     console.log(response);

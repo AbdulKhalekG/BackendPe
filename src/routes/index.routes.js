@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const usuario = require('../controllers/usuario')
+const peli = require('../controllers/peli')
 const passport=require('passport')
 const { passportAuth } = require('../middleware')
-const peli = require('../controllers/peli')
+
 
 
 //Rutas para los users
