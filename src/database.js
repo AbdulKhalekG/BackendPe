@@ -53,12 +53,20 @@ const searchuserid=async(req,res)=>{
     res.json(response.rows)
 }
 
+//funcion create peli
+
+const createpeli=async (req,res)=> {
+    const{tittle,descripcion,fecha, rating, genero, categoria} = req.body
+    const response = await pool.query('INSERT INTO post(tittle, descripcion, fecha, rating, genero, categoria) VALUES($1,$2,$3,$4,$5,$6)',[tittle,descripcion,fecha,rating,genero,categoria])
+    console.log(response);
+}
 
 module.exports = {
     createuser,
     modifyuser,
     searchuserid,
-    searchusername
+    searchusername,
+    createpeli
 
 
 }
