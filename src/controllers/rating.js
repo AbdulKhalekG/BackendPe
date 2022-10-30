@@ -11,7 +11,7 @@ const rating={}
 
 rating.peli=(req,res)=>{
     try{
-        ratings.ratingspeli(req,res)
+        ratingspeli.ratingspeli(req,res)
         res.json(response)
 
     }catch(e){
@@ -20,7 +20,7 @@ rating.peli=(req,res)=>{
 
 rating.usuario=(req,res)=>{
         try{
-            ratings.ratinguser(req,res)
+            ratinguser.ratinguser(req,res)
             res.json(response)
         }catch(e){
             console.log(e);
@@ -30,7 +30,7 @@ rating.usuario=(req,res)=>{
 
 rating.createratingpeli=(req,res)=>{
     try{
-        ratings.createratingpeli(req,res);
+        createratingpeli.createratingpeli(req,res);
         res.json(response)
 
     }catch(e){
@@ -38,7 +38,7 @@ rating.createratingpeli=(req,res)=>{
     }
     rating.deleteratingpeli=(req,res)=> {
         try{
-            ratings.deleteratingpeli(req,res)
+            deleteratingpeli.deleteratingpeli(req,res)
         }catch(e){
             console.log(e)
         }
@@ -46,7 +46,7 @@ rating.createratingpeli=(req,res)=>{
 }
 rating.createratinguser=(req,res)=> {
     try{
-        ratings.createratinguser(req,res)
+        createratinguser.createratinguser(req,res)
         res.json(response)
     }catch(e){
         console.log(e);
@@ -54,7 +54,7 @@ rating.createratinguser=(req,res)=> {
 }
 rating.deleteratinguser=(req,res)=> {
     try{
-        ratings.deleteratinguser(req,res)
+        deleteratinguser.deleteratinguser(req,res)
     }catch(e){
         console.log(e)
     }
@@ -62,7 +62,7 @@ rating.deleteratinguser=(req,res)=> {
 
 rating.deleteratingpeli=(req,res)=> {
     try{
-        ratings.deleteratingpeli(req,res)
+        deleteratingpeli.deleteratingpeli(req,res)
     }catch(e){
         console.log(e)
     }
