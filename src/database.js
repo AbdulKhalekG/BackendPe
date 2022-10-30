@@ -82,6 +82,13 @@ const searchusernamepeli=async(req,res)=>{
 
     }
 
+    //funcion likepost por posts
+const ratingspeli=async(req,res)=> {
+    const id_rating=req.params.id_rating
+    const response=await pool.query('SELECT* FROM rating WHERE id_rating=$1', [id_rating])
+    console.log(response.rowCount);
+
+}
 module.exports = {
     createuser,
     modifyuser,
@@ -90,7 +97,8 @@ module.exports = {
     createpeli,
     editpeli,
     searchidpeli,
-    searchusernamepeli
+    searchusernamepeli,
+    ratingspeli
 
 
 }

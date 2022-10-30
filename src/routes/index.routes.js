@@ -4,6 +4,7 @@ const usuario = require('../controllers/usuario')
 const peli = require('../controllers/peli')
 const passport=require('passport')
 const { passportAuth } = require('../middleware')
+const rating = require('../controllers/rating')
 
 
 
@@ -27,6 +28,14 @@ router.get('/search-peli/:id_post',peli.searchid)
 
 //busqueda de peli por username
 router.get('/search-usernamepeli/:username', peli.searchuserpeli)
+
+//rutas rating
+router.get('/rating-post/:id_peli',rating.peli)
+router.get('/rating-user/:id_usuario',rating.usuario)
+router.post('/createrating-post',rating.createratingpeli)
+router.post('/createrating-user',rating.createratinguser)
+router.delete('/deleterating-user/:id_usuario',rating.deleteratinguser)
+router.delete('/deleterating-peli/:id_post',rating.deleteratingpeli)
 
 
 
