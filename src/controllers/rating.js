@@ -17,6 +17,7 @@ rating.peli=(req,res)=>{
     }catch(e){
         console.log(e);
     }
+}
 
 rating.usuario=(req,res)=>{
         try{
@@ -27,6 +28,7 @@ rating.usuario=(req,res)=>{
         }
     }
     
+    
 
 rating.createratingpeli=(req,res)=>{
     try{
@@ -36,6 +38,8 @@ rating.createratingpeli=(req,res)=>{
     }catch(e){
         console.log(e);
     }
+}
+
     rating.deleteratingpeli=(req,res)=> {
         try{
             deleteratingpeli.deleteratingpeli(req,res)
@@ -43,7 +47,7 @@ rating.createratingpeli=(req,res)=>{
             console.log(e)
         }
     }
-}
+
 rating.createratinguser=(req,res)=> {
     try{
         createratinguser.createratinguser(req,res)
@@ -68,6 +72,7 @@ rating.deleteratingpeli=(req,res)=> {
     }
 }
 
-}
+
+
 
 module.exports = rating
