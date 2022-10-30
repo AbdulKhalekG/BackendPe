@@ -1,3 +1,9 @@
+const ratingspeli = require('../database')
+const ratinguser = require('../database')
+const createratingpeli = require('../database')
+const createratinguser = require('../database')
+const deleteratingpeli = require('../database')
+const deleteratinguser = require('../database')
 const {response} = require('express')
 const ratings=require('../database')
 
@@ -30,9 +36,9 @@ rating.createratingpeli=(req,res)=>{
     }catch(e){
         console.log(e);
     }
-    rating.deleteratingpost=(req,res)=> {
+    rating.deleteratingpeli=(req,res)=> {
         try{
-            ratings.deleteratingpost(req,res)
+            ratings.deleteratingpeli(req,res)
         }catch(e){
             console.log(e)
         }

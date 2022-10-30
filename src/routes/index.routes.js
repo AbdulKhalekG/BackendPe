@@ -2,9 +2,10 @@ const express = require('express')
 const router = express.Router()
 const usuario = require('../controllers/usuario')
 const peli = require('../controllers/peli')
+const rating = require('../controllers/rating')
 const passport=require('passport')
 const { passportAuth } = require('../middleware')
-const rating = require('../controllers/rating')
+
 
 
 
