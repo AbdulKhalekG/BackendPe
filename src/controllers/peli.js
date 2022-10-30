@@ -21,7 +21,7 @@ peli.create=(req,res)=>{
 peli.edit=(req,res)=>{
     try {
         editpeli.editpeli(req,res);
-        res.send('edit post')
+        res.send('edit peli')
     }catch(e){
         console.log(e)
     }
@@ -29,7 +29,7 @@ peli.edit=(req,res)=>{
 }
 
 //search post id
-post.searchid=(req,res)=> {
+peli.searchid=(req,res)=> {
 
     try{
         searchidpeli.searchidpeli(req,res);
@@ -40,7 +40,7 @@ post.searchid=(req,res)=> {
 }
 
 //search usernamepost
-post.searchuserpeli=(req,res)=> {
+peli.searchuserpeli=(req,res)=> {
     try{
         searchusernamepeli.searchusernamepeli(req,res);
         res.send('search peli for username')
