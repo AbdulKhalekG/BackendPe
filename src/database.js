@@ -57,16 +57,40 @@ const searchuserid=async(req,res)=>{
 
 const createpeli=async (req,res)=> {
     const{tittle,descripcion,fecha, rating, genero, categoria} = req.body
-    const response = await pool.query('INSERT INTO post(tittle, descripcion, fecha, rating, genero, categoria) VALUES($1,$2,$3,$4,$5,$6)',[tittle,descripcion,fecha,rating,genero,categoria])
+    const response = await pool.query('INSERT INTO peli(tittle, descripcion, fecha, rating, genero, categoria) VALUES($1,$2,$3,$4,$5,$6)',[tittle,descripcion,fecha,rating,genero,categoria])
     console.log(response);
 }
+
+const editpeli=async (req,res)=> {
+    const{id_peli, tittle, descripcion,fecha, rating, genero, categoria} = req.body
+    const response = await pool.query('UPDATE peli SET tittle=$1, descripcion=$2, fecha=$3, rating=$4, genero=$5, categoria=$6 WHERE id_peli=$7',[id_peli, tittle,descripcion,fecha,rating,genero,categoria])
+    console.log(response);
+}
+
+//funcion peli id
+const searchidpeli=async(req,res)=>{
+    const id_peli =req.params.id_peli
+    const response=await pool.query('SELECT *FROM peli WHERE id_peli=$1', [id_peli])
+    console.log(response.rows);
+}
+
+//funcion peli username
+const searchusernamepeli=async(req,res)=>{
+    const username=req.params.username
+    const response=await pool.query('SELECT* FROM peli WHERE username=$1', [username])
+    console.log(response.rows);
+
+    }
 
 module.exports = {
     createuser,
     modifyuser,
     searchuserid,
     searchusername,
-    createpeli
+    createpeli,
+    editpeli,
+    searchidpeli,
+    searchusernamepeli
 
 
 }
