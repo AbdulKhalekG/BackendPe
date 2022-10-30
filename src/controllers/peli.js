@@ -49,3 +49,5 @@ post.searchuserpeli=(req,res)=> {
     }
 
 }
+
+module.exports = peli
