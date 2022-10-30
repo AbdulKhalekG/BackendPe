@@ -20,13 +20,13 @@ router.get('/search-username/:username',usuario.searchuser) //
 
 //peli
 
-router.post('/create-peli', post.create) //
-router.put('/edit-peli',post.edit) //
+router.post('/create-peli', peli.create) //
+router.put('/edit-peli',peli.edit) //
 //busqueda de peli por id
-router.get('/search-peli/:id_post',post.searchid)
+router.get('/search-peli/:id_post',peli.searchid)
 
-//busqueda de post por username
-router.get('/search-usernamepeli/:username', post.searchuserpeli)
+//busqueda de peli por username
+router.get('/search-usernamepeli/:username', peli.searchuserpeli)
 
 
 
