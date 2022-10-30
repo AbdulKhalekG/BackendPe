@@ -9,7 +9,7 @@ const peli={}
 //create peli
 peli.create=(req,res)=>{
     try{
-        createpeli.createpost(req,res);
+        createpeli.createpeli(req,res);
         res.send('create peli')
     }catch(e){
         console.log(e)
