@@ -89,6 +89,12 @@ const ratingspeli=async(req,res)=> {
     console.log(response.rowCount);
 
 }
+
+const ratingsuser=async(req,res)=> {
+    const id_usuario=req.params.id_usuario
+    const response=await pool.query('SELECT * FROM rating WHERE id_usuario ', [id_usuario])
+    console.log(response.rowCount)
+}
 module.exports = {
     createuser,
     modifyuser,
@@ -98,7 +104,8 @@ module.exports = {
     editpeli,
     searchidpeli,
     searchusernamepeli,
-    ratingspeli
+    ratingspeli,
+    ratingsuser
 
 
 }

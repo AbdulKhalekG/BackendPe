@@ -30,7 +30,7 @@ router.get('/search-peli/:id_post',peli.searchid)
 router.get('/search-usernamepeli/:username', peli.searchuserpeli)
 
 //rutas rating
-router.get('/rating-post/:id_peli',rating.peli)
+router.get('/rating-peli/:id_peli',rating.peli)
 router.get('/rating-user/:id_usuario',rating.usuario)
 router.post('/createrating-post',rating.createratingpeli)
 router.post('/createrating-user',rating.createratinguser)
