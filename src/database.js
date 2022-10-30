@@ -103,7 +103,7 @@ const createratingpeli=async(req,res)=> {
 }
 
 const createratinguser=async(req,res)=> {
-    const{id_rating,id_peli} = req.body
+    const{id_rating,id_usuario} = req.body
     const response = await pool.query('INSERT INTO rating(id_rating,id_usuario VALUES($1,$2)', [id_rating,id_usuario])
     console.log(response);
 }
