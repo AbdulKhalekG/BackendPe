@@ -56,14 +56,14 @@ const searchuserid=async(req,res)=>{
 //funcion create peli
 
 const createpeli=async (req, res)=> {
-    const{tittle,descripcion,fecha, rating, genero, categoria} = req.body
-    const response = await pool.query('INSERT INTO peli(tittle, descripcion, fecha, rating, genero, categoria) VALUES($1,$2,$3,$4,$5,$6)',[tittle,descripcion,fecha,rating,genero,categoria])
+    const{title,descripcion,fecha, rating, genero, categoria} = req.body
+    const response = await pool.query('INSERT INTO peli(title, descripcion, fecha, rating, genero, categoria) VALUES($1,$2,$3,$4,$5,$6)',[title,descripcion,fecha,rating,genero,categoria])
     console.log(response);
 }
 
 const editpeli=async (req,res)=> {
-    const{id_peli, tittle, descripcion,fecha, rating, genero, categoria} = req.body
-    const response = await pool.query('UPDATE peli SET tittle=$1, descripcion=$2, fecha=$3, rating=$4, genero=$5, categoria=$6 WHERE id_peli=$7',[id_peli, tittle,descripcion,fecha,rating,genero,categoria])
+    const{id_peli, title, descripcion,fecha, rating, genero, categoria} = req.body
+    const response = await pool.query('UPDATE peli SET title=$1, descripcion=$2, fecha=$3, rating=$4, genero=$5, categoria=$6 WHERE id_peli=$7',[id_peli, title,descripcion,fecha,rating,genero,categoria])
     console.log(response);
 }
 
