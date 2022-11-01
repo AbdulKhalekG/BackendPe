@@ -25,7 +25,7 @@ router.get('/search-username/:username',usuario.searchuser) //
 router.post('/create-peli', peli.create) //
 router.put('/edit-peli',peli.edit) //
 //busqueda de peli por id
-router.get('/search-peli/:id_post',peli.searchid)
+router.get('/search-peli/:id_peli',peli.searchid)
 
 //busqueda de peli por username
 router.get('/search-usernamepeli/:username', peli.searchuserpeli)
